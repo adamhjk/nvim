@@ -3,7 +3,5 @@ if not status_ok then
   return
 end
 
-trouble.setup({
-  auto_close = true,
-});
+trouble.setup({});
 
