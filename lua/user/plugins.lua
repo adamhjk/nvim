@@ -51,7 +51,7 @@ return packer.startup(function(use)
 	--use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
-	use("akinsho/toggleterm.nvim")
+	--use("akinsho/toggleterm.nvim")
 	use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
@@ -109,7 +109,8 @@ return packer.startup(function(use)
 	use("tpope/vim-fugitive")
 
 	-- Testing
-	use({ "rcarriga/vim-ultest", requires = { "vim-test/vim-test" }, run = ":UpdateRemotePlugins" })
+  use("vim-test/vim-test")
+
 
   -- Notification
   use("rcarriga/nvim-notify")
@@ -118,6 +119,12 @@ return packer.startup(function(use)
   use("tpope/vim-dadbod")
   use("kristijanhusak/vim-dadbod-ui")
   use("kristijanhusak/vim-dadbod-completion")
+
+  -- Markdown
+  use("davidgranstrom/nvim-markdown-preview")
+
+  -- Enhanced % pairs
+  use("andymass/vim-matchup")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
