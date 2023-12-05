@@ -47,12 +47,21 @@ return packer.startup(function(use)
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
-	use("kyazdani42/nvim-tree.lua")
+  use {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v2.x",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  }
+	--use("kyazdani42/nvim-tree.lua")
 	--use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
 	use("nvim-lualine/lualine.nvim")
 	--use("akinsho/toggleterm.nvim")
-	use("ahmedkhalf/project.nvim")
+	--use("ahmedkhalf/project.nvim")
 	use("lewis6991/impatient.nvim")
 	use("lukas-reineke/indent-blankline.nvim")
 	use("goolord/alpha-nvim")
@@ -60,7 +69,7 @@ return packer.startup(function(use)
 	use("folke/which-key.nvim")
 
 	-- Colorschemes
-	use("doums/darcula")
+	use("navarasu/onedark.nvim")
 
 	-- cmp plugins
 	use("hrsh7th/nvim-cmp") -- The completion plugin
@@ -74,13 +83,19 @@ return packer.startup(function(use)
 	use("L3MON4D3/LuaSnip") --snippet engine
 	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
 
+  -- Mason and friends for LSP fun times
+
 	-- LSP
-	use("neovim/nvim-lspconfig") -- enable LSP
-	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-	use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+  use { "williamboman/mason.nvim", run = ":MasonUpdate" }
+  use { "williamboman/mason-lspconfig.nvim" }
+  use { "neovim/nvim-lspconfig" }
+  use { "j-hui/fidget.nvim", tag = "legacy" }
+	--use("neovim/nvim-lspconfig") -- enable LSP
+	--use("williamboman/nvim-lsp-installer") -- simple to use language server installer
+	--use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
 	use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
-	use("ray-x/lsp_signature.nvim") -- for signatures as you type
-	use("stevearc/dressing.nvim") -- fancy insert box
+	--use("ray-x/lsp_signature.nvim") -- for signatures as you type
+	--use("stevearc/dressing.nvim") -- fancy insert box
 	use("simrat39/rust-tools.nvim") -- better rust lsp integration
   use("folke/trouble.nvim") -- better diagnostics
   use("kosayoda/nvim-lightbulb") -- a lightbulb when there is an action
@@ -125,6 +140,9 @@ return packer.startup(function(use)
 
   -- Enhanced % pairs
   use("andymass/vim-matchup")
+
+  -- Terraform
+  use("hashivim/vim-terraform")
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

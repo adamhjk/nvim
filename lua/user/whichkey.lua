@@ -84,7 +84,7 @@ local mappings = {
     "<cmd>Telescope buffers<cr>",
     "Buffers",
   },
-  ["d"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+  ["d"] = { "<cmd>Neotree left reveal toggle<cr>", "Explorer" },
   ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["t"] = {
@@ -137,7 +137,7 @@ local mappings = {
       "<cmd>Telescope lsp_workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format({ timeout_ms = 10000 })<cr>", "Format" },
     i = { "<cmd>LspInfo<cr>", "Info" },
     I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
     j = {

@@ -1,8 +1,5 @@
-vim.cmd [[
-try
-  colorscheme darcula
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
+local onedark = require('onedark');
+onedark.setup {
+  style = 'warm'
+}
+onedark.load();

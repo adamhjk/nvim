@@ -10,9 +10,9 @@ local diagnostics = null_ls.builtins.diagnostics
 local actions = null_ls.builtins.code_actions
 
 null_ls.setup({
-	debug = false,
+	debug = true,
 	sources = {
-		formatting.prettier,
+    formatting.eslint,
 		formatting.stylua,
     diagnostics.eslint,
     actions.eslint,
